@@ -132,7 +132,6 @@
 
 </div>
 
-
 <!-- Firebase -->
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
@@ -141,15 +140,15 @@
 <script>
 
   const firebaseConfig = {
-  apiKey: "AIzaSyBvYmos9QrncugnP7xgbW6jjGrL_nkUB9g",
-  authDomain: "aura-cafe-a6e29.firebaseapp.com",
-  databaseURL: "https://aura-cafe-a6e29-default-rtdb.firebaseio.com",
-  projectId: "aura-cafe-a6e29",
-  storageBucket: "aura-cafe-a6e29.firebasestorage.app",
-  messagingSenderId: "299898298819",
-  appId: "1:299898298819:web:af28414eb6eab14cf15d76",
-  measurementId: "G-BVBS3PPWBX"
-};
+    apiKey: "AIzaSyBvYmos9QrncugnP7xgbW6jjGrL_nkUB9g",
+    authDomain: "aura-cafe-a6e29.firebaseapp.com",
+    databaseURL: "https://aura-cafe-a6e29-default-rtdb.firebaseio.com",
+    projectId: "aura-cafe-a6e29",
+    storageBucket: "aura-cafe-a6e29.firebasestorage.app",
+    messagingSenderId: "299898298819",
+    appId: "1:299898298819:web:af28414eb6eab14cf15d76",
+    measurementId: "G-BVBS3PPWBX"
+  };
 
   firebase.initializeApp(firebaseConfig);
 
@@ -170,10 +169,21 @@
     }
 
     auth.signInWithEmailAndPassword(email, password)
+      .then(() => {
+
+        // 🔔 Notification permission
+        if ("Notification" in window) {
+          Notification.requestPermission();
+        }
+
+      })
       .catch((error) => {
+
         document.getElementById("error").innerText =
           error.message;
+
       });
+
   }
 
 
@@ -193,6 +203,7 @@
 
       loadOrders();
       loadReservations();
+      watchNewOrders();
 
     } else {
 
@@ -204,7 +215,7 @@
   });
 
 
-  // ORDERS
+  // 📦 ORDERS
   function loadOrders() {
 
     const ordersDiv = document.getElementById("orders");
@@ -214,8 +225,10 @@
       ordersDiv.innerHTML = "";
 
       if (!snapshot.exists()) {
+
         ordersDiv.innerHTML =
           '<p class="empty">No orders yet.</p>';
+
         return;
       }
 
@@ -243,7 +256,66 @@
   }
 
 
-  // RESERVATIONS
+  // 🔔 NEW ORDER NOTIFICATION
+  function watchNewOrders() {
+
+    const ordersRef = database.ref("orders");
+
+    // Existing orders लक्षात ठेवणे
+    ordersRef.once("value").then((snapshot) => {
+
+      const existingOrders = new Set();
+
+      snapshot.forEach((child) => {
+        existingOrders.add(child.key);
+      });
+
+
+      ordersRef.on("child_added", (snapshot) => {
+
+        // जुना order असेल तर notification नको
+        if (existingOrders.has(snapshot.key)) {
+          return;
+        }
+
+        const order = snapshot.val();
+
+        // 🔔 Browser notification
+        if (
+          "Notification" in window &&
+          Notification.permission === "granted"
+        ) {
+
+          new Notification("☕ AURA Café — New Order!", {
+            body:
+              `${order.name || "Customer"} ordered ${order.item || "an item"} × ${order.quantity || 1}\nTotal: ₹${order.total || "-"}`,
+            icon: "https://cdn-icons-png.flaticon.com/512/924/924514.png"
+          });
+
+        } else {
+
+          // Notification permission नसेल तर simple alert
+          alert(
+            `☕ NEW ORDER!\n\n` +
+            `Name: ${order.name || "-"}\n` +
+            `Item: ${order.item || "-"}\n` +
+            `Quantity: ${order.quantity || "-"}\n` +
+            `Total: ₹${order.total || "-"}`
+          );
+
+        }
+
+        // पुढच्या orders साठी हा order आता existing
+        existingOrders.add(snapshot.key);
+
+      });
+
+    });
+
+  }
+
+
+  // 📅 RESERVATIONS
   function loadReservations() {
 
     const reservationsDiv =
@@ -254,8 +326,10 @@
       reservationsDiv.innerHTML = "";
 
       if (!snapshot.exists()) {
+
         reservationsDiv.innerHTML =
           '<p class="empty">No reservations yet.</p>';
+
         return;
       }
 
