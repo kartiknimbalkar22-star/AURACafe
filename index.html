@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AURA Café</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+
+  <header class="navbar">
+
+    <a href="#home" class="logo">
+      ☕ <span>AURA</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reservation">Reservation</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#reservation" class="nav-btn">
+      Book a Table
+    </a>
+
+  </header>
+
+
+  <!-- ================= HERO ================= -->
+
+  <main>
+
+    <section id="home" class="hero">
+
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+
+        <p class="eyebrow">
+          WELCOME TO AURA
+        </p>
+
+        <h1>
+          Coffee,<br>
+          <span>moments.</span>
+        </h1>
+
+        <p class="hero-text">
+          Freshly brewed coffee, delicious desserts and
+          a warm atmosphere made for beautiful moments.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="#menu" class="btn btn-primary">
+            Explore Menu
+          </a>
+
+          <a href="#reservation" class="btn btn-outline">
+            Reserve Table
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= MENU ================= -->
+
+    <section id="menu" class="section menu-section">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">OUR MENU</p>
+
+        <h2>
+          Made with <span>love.</span>
+        </h2>
+
+        <p>
+          Simple ingredients. Beautiful flavours.
+        </p>
+
+      </div>
+
+
+      <div class="menu-grid">
+
+
+        <!-- CARD 1 -->
+
+        <article class="menu-card">
+
+          <div class="food-image">
+            ☕
+          </div>
+
+          <div class="food-info">
+
+            <div>
+              <h3>Cappuccino</h3>
+
+              <p>
+                Rich espresso with creamy steamed milk.
+              </p>
+            </div>
+
+            <div class="food-bottom">
+
+              <strong>₹129</strong>
+
+              <button
+                class="order-btn"
+                type="button"
+                data-item="Cappuccino"
+                data-price="129"
+              >
+                Order
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- CARD 2 -->
+
+        <article class="menu-card">
+
+          <div class="food-image">
+            🍰
+          </div>
+
+          <div class="food-info">
+
+            <div>
+              <h3>Chocolate Cake</h3>
+
+              <p>
+                Soft chocolate cake layered with rich
+                chocolate cream.
+              </p>
+            </div>
+
+            <div class="food-bottom">
+
+              <strong>₹179</strong>
+
+              <button
+                class="order-btn"
+                type="button"
+                data-item="Chocolate Cake"
+                data-price="179"
+              >
+                Order
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- CARD 3 -->
+
+        <article class="menu-card">
+
+          <div class="food-image">
+            🥐
+          </div>
+
+          <div class="food-info">
+
+            <div>
+              <h3>Butter Croissant</h3>
+
+              <p>
+                Freshly baked, crispy and buttery.
+              </p>
+            </div>
+
+            <div class="food-bottom">
+
+              <strong>₹149</strong>
+
+              <button
+                class="order-btn"
+                type="button"
+                data-item="Butter Croissant"
+                data-price="149"
+              >
+                Order
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+
+        <!-- CARD 4 -->
+
+        <article class="menu-card">
+
+          <div class="food-image">
+            🍮
+          </div>
+
+          <div class="food-info">
+
+            <div>
+              <h3>Caramel Dessert</h3>
+
+              <p>
+                Smooth and creamy dessert with caramel
+                flavour.
+              </p>
+            </div>
+
+            <div class="food-bottom">
+
+              <strong>₹159</strong>
+
+              <button
+                class="order-btn"
+                type="button"
+                data-item="Caramel Dessert"
+                data-price="159"
+              >
+                Order
+              </button>
+
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+
+
+    <!-- ================= GALLERY ================= -->
+
+    <section id="gallery" class="section gallery-section">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          OUR SPACE
+        </p>
+
+        <h2>
+          Feel the <span>AURA.</span>
+        </h2>
+
+      </div>
+
+
+      <div class="gallery-grid">
+
+        <div class="gallery-box large">
+          <img
+            src="https://i.postimg.cc/1XTfCwV1/IMG-20260829-WA0004.jpg"
+            alt="AURA Café interior"
+          >
+        </div>
+
+        <div class="gallery-box">
+          <img
+            src="https://i.postimg.cc/1XRGhGzx/IMG-20260829-WA0007.jpg"
+            alt="AURA Café"
+          >
+        </div>
+
+        <div class="gallery-box">
+          <img
+            src="https://i.postimg.cc/3RxN3n2V/IMG-20260829-WA0006.jpg"
+            alt="AURA Café"
+          >
+        </div>
+
+        <div class="gallery-box large">
+          <img
+            src="https://i.postimg.cc/Mp0pRh5J/IMG-20260829-WA0005.jpg"
+            alt="AURA Café"
+          >
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= RESERVATION ================= -->
+
+   <section id="reservation" class="reservation-section">
+
+  <div class="reservation-content">
+
+    <div class="reservation-text">
+
+      <p class="eyebrow">
+        RESERVATION
+      </p>
+
+      <h2>
+        Reserve your
+        <span>table.</span>
+      </h2>
+
+      <p>
+        Planning a coffee date, a quiet evening or
+        a special gathering? Reserve your table at AURA.
+      </p>
+
+    </div>
+
+    <div class="form-card">
+
+      <form id="reservationForm">
+
+        <div class="input-row">
+
+          <input
+            type="text"
+            id="reservationName"
+            placeholder="Your Name"
+            required
+          >
+
+          <input
+  type="tel"
+  id="reservationPhone"
+  placeholder="Phone Number"
+  pattern="[6-9][0-9]{9}"
+  minlength="10"
+  maxlength="10"
+  required
+>
+
+        </div>
+
+        <div class="input-row">
+
+          <input
+            type="date"
+            id="reservationDate"
+            required
+          >
+
+          <select
+            id="reservationGuests"
+            required
+          >
+
+            <option value="">
+              Number of Guests
+            </option>
+
+            <option value="1">1 Guest</option>
+            <option value="2">2 Guests</option>
+            <option value="3">3 Guests</option>
+            <option value="4">4 Guests</option>
+            <option value="5+">5+ Guests</option>
+
+          </select>
+
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-primary full-btn"
+        >
+          Reserve Table
+        </button>
+
+      </form>
+
+      <div
+        id="successMessage"
+        class="success-message"
+      >
+        ✓ Your table reservation has been received!
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact" class="section contact-section">
+
+      <div class="section-heading">
+
+        <p class="eyebrow">
+          CONTACT
+        </p>
+
+        <h2>
+          Come say <span>hello.</span>
+        </h2>
+
+      </div>
+
+
+      <div class="contact-grid">
+
+        <div class="contact-item">
+          <span>📍</span>
+          <div>
+            <h3>Visit Us</h3>
+            <p>Main Street, Maharashtra</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <span>📞</span>
+          <div>
+            <h3>Call Us</h3>
+            <p>+91 98765 43210</p>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <span>✉️</span>
+          <div>
+            <h3>Email Us</h3>
+            <a href="mailto:kartiknimbalkar22@gmail.com">
+  ✉️ kartiknimbalkar22@gmail.com
+</a>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= ORDER MODAL ================= -->
+
+  <div
+    id="orderModal"
+    class="order-modal"
+    aria-hidden="true"
+  >
+
+    <div class="order-box">
+
+      <button
+        id="closeOrder"
+        class="close-order"
+        type="button"
+        aria-label="Close"
+      >
+        ×
+      </button>
+
+
+      <p class="eyebrow">
+        AURA CAFÉ
+      </p>
+
+      <h2>
+        Place your order
+      </h2>
+
+
+      <div class="selected-product">
+
+        <span>Selected item</span>
+
+        <strong id="selectedItem">
+          Item
+        </strong>
+
+        <strong id="selectedPrice">
+          ₹0
+        </strong>
+
+      </div>
+
+
+      <form id="orderForm">
+
+        <input
+          type="text"
+          id="customerName"
+          placeholder="Your Name"
+          required
+        >
+
+        <input
+          type="tel"
+          id="customerPhone"
+          placeholder="Phone Number"
+          required
+        >
+
+        <select
+          id="quantity"
+          required
+        >
+
+          <option value="">
+            Quantity
+          </option>
+
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+
+        </select>
+
+
+        <button
+          type="submit"
+          class="btn btn-primary full-btn"
+        >
+          Place Order
+        </button>
+
+      </form>
+
+
+      <div
+        id="orderSuccess"
+        class="success-message"
+      >
+        ✓ Order received successfully!
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <div class="footer-logo">
+      ☕ <span>AURA</span>
+    </div>
+
+    <p>
+      © 2026 AURA Café. All rights reserved.
+    </p>
+
+    <a href="#home">
+      Back to top ↑
+    </a>
+
+  </footer>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
